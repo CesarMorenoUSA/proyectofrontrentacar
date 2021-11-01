@@ -1,0 +1,55 @@
+
+.titulos{
+    background: #e22c07;
+	color:#FFFAFA;
+	height: 75px;	
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	text-align: center;
+}
+
+
+body{
+    background-color: gray;
+}
+
+#au{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+    background-color: black;
+}
+
+nav a{
+    text-decoration:none;
+    color:inherit;
+    font-size:14px;
+    } 
+    nav li{
+        display:inline-block;
+        width:10%;
+        padding:5px 10px;
+        background-color:#000;
+        border:1px solid #000;
+        text-align:center;
+        color:#fff;
+        }
+    nav li:hover{
+    background-color:#fff;
+    color:#000;
+    }
+    nav li{
+        float:left;
+        width:100%;
+        padding:5px 10px;
+        background-color:#000;
+        border:1px solid #000;
+        text-align:center;
+        color:#fff;
+        }
+.subtitulo{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:black;
+    background-color:red;
+}
+    
