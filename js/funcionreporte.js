@@ -1,7 +1,7 @@
 function reporteStatus(){
     console.log("test");
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Reservation/report-status",
+        url:"http://168.138.69.152:8080/api/Reservation/report-status",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -27,7 +27,7 @@ function reporteFecha(){
     fc=document.getElementById("Rdevolutiondate").value;
     console.log(fi+fc);
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Reservation/report-dates/"+fi+"/"+fc,
+        url:"http://168.138.69.152:8080/api/Reservation/report-dates/"+fi+"/"+fc,
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -54,7 +54,7 @@ function pintarRespuestaDate(respuesta){
 function reporteCliente(){
     console.log("test");
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Reservation/report-clients",
+        url:"http://168.138.69.152:8080/api/Reservation/report-clients",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){

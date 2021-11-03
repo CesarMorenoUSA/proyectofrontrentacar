@@ -1,6 +1,6 @@
 function consultarGamas(){
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Gama/all",
+        url:"http://168.138.69.152:8080/api/Gama/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -48,7 +48,7 @@ function guardarGamas(){
             contentType: "application/json; charset=utf-8",
             dataType: 'JSON',
             data: JSON.stringify(regGama),
-            url:"http://129.151.122.175:8080/api/Gama/save",
+            url:"http://168.138.69.152/api/Gama/save",
                 
             success:function(response){
                 console.log(response);
@@ -82,7 +82,7 @@ function actualizarGamas(idElem){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Gama/update",
+        url:"http://168.138.69.152:8080/api/Gama/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -104,7 +104,7 @@ function borrarGamas(idElem){
     };
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Gama/"+idElem,
+        url:"http://168.138.69.152:8080/api/Gama/"+idElem,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",
@@ -121,7 +121,7 @@ function borrarGamas(idElem){
 
 function consultarCarros(){
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Car/all",
+        url:"http://168.138.69.152:8080/api/Car/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -169,7 +169,7 @@ function guardarCarros(){
         contentType: "application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(regCar),
-        url:"http://129.151.122.175:8080/api/Car/save",
+        url:"http://168.138.69.152:8080/api/Car/save",
         success:function(response) {
             console.log(response);
             console.log("Se ha registrado un nuevo carro");
@@ -203,7 +203,7 @@ function actualizarCarros(idElc){
         console.log(myData);
         let dataToSend=JSON.stringify(myData);
         $.ajax({
-            url:"http://129.151.122.175:8080/api/Car/update",
+            url:"http://168.138.69.152:8080/api/Car/update",
             type:"PUT",
             data:dataToSend,
             contentType:"application/JSON",
@@ -227,7 +227,7 @@ function borrarCarros(idElc){
         };
     let dataToSend=JSON.stringify(myData);
         $.ajax({
-            url:"http://129.151.122.175:8080/api/Car/"+idElc,
+            url:"http://168.138.69.152:8080/api/Car/"+idElc,
             type:"DELETE",
             data:dataToSend,
             contentType:"application/JSON",
@@ -245,7 +245,7 @@ function borrarCarros(idElc){
 
 function consultarClientes(){
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Client/all",
+        url:"http://168.138.69.152:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -293,7 +293,7 @@ function guardarClientes(){
         contentType: "application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(regCli),
-        url:"http://129.151.122.175:8080/api/Client/save",
+        url:"http://168.138.69.152:8080/api/Client/save",
         success:function(response) {
             console.log(response);
             console.log("Se guardo correctamente");
@@ -327,7 +327,7 @@ function actualizarClientes(idElCli){
         console.log(myData);
         let dataToSend=JSON.stringify(myData);
         $.ajax({
-            url:"http://129.151.122.175:8080/api/Client/update",
+            url:"http://168.138.69.152:8080/api/Client/update",
             type:"PUT",
             data:dataToSend,
             contentType:"application/JSON",
@@ -351,7 +351,7 @@ function borrarClientes(idElCli){
         };
     let dataToSend=JSON.stringify(myData);
         $.ajax({
-            url:"http://129.151.122.175:8080/api/Client/"+idElCli,
+            url:"http://168.138.69.152:8080/api/Client/"+idElCli,
             type:"DELETE",
             data:dataToSend,
             contentType:"application/JSON",
@@ -367,7 +367,7 @@ function borrarClientes(idElCli){
 
 function consultarMensajes(){
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Message/all",
+        url:"http://168.138.69.152:8080/api/Message/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -406,7 +406,7 @@ function guardarMensajes(){
         contentType: "application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(regMsj),
-        url:"http://129.151.122.175:8080/api/Message/save",
+        url:"http://168.138.69.152:8080/api/Message/save",
         success:function(response){
             console.log(response);
             console.log("Se guardo correctamente");
@@ -433,7 +433,7 @@ function actualizarMensajes(idElMs){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Message/update",
+        url:"http://168.138.69.152:8080/api/Message/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -454,7 +454,7 @@ function borrarMensajes(idElMs){
     };
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Message/"+idElMs,
+        url:"http://168.138.69.152:8080/api/Message/"+idElMs,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",
@@ -471,7 +471,7 @@ function borrarMensajes(idElMs){
 
 function consultarReservas(){
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Reservation/all",
+        url:"http://168.138.69.152:8080/api/Reservation/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -513,7 +513,7 @@ function guardarReservas(){
         contentType: "application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(regResv),
-        url:"http://129.151.122.175:8080/api/Reservation/save",
+        url:"http://168.138.69.152:8080/api/Reservation/save",
         success:function(response){
             console.log(response);
             console.log("Se guardo correctamente");
@@ -542,7 +542,7 @@ function actualizarReservaciones(idElR){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Reservation/update",
+        url:"http://168.138.69.152:8080/api/Reservation/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -564,7 +564,7 @@ function borrarReservaciones(idElR){
     };
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://129.151.122.175:8080/api/Reservation/"+idElR,
+        url:"http://168.138.69.152:8080/api/Reservation/"+idElR,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",
