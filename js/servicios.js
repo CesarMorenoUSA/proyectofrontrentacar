@@ -13,12 +13,6 @@ function consultarGamas(){
 function pintarRespuesta(respuesta){
 
     let myTable="<table>";
-        myTable+="<tr>";
-        myTable+="<th>Nombre</th>";
-        myTable+="<th>Descripción</th>";
-        myTable+="<th>Carro</th>";
-        myTable+="<th>Acción</th>";
-        myTable+="</tr>";
     for(i=0;i<respuesta.length;i++){
         myTable+="<tr>";
         myTable+="<td>"+respuesta[i].name+"</td>";
@@ -36,7 +30,7 @@ function guardarGamas(){
     descripcion= document.getElementById("Gdescription").value;
     console.log(nombre + descripcion);
     if(nombre.length==0||descripcion.length==0){
-        alert("No sé aceptan campos vacios");
+        alert("Llene los campos Nombre y Descripción");
     }else{
         let regGama = {
             name:$("#Gname").val(),
@@ -48,12 +42,13 @@ function guardarGamas(){
             contentType: "application/json; charset=utf-8",
             dataType: 'JSON',
             data: JSON.stringify(regGama),
-            url:"http://168.138.69.152/api/Gama/save",
+            url:"http://168.138.69.152:8080/api/Gama/save",
                 
             success:function(response){
                 console.log(response);
-                console.log("Se guardo correctamente");
-                alert("Se guardo correctamente");
+                console.log("Se guardo correctamente");                
+                alert("Se guardo correctamente una gama");
+                gamaf.reset();
                     window.location.reload()    
                 },        
             error: function(jqXHR, textStatus, errorThrown) {
@@ -72,7 +67,7 @@ function actualizarGamas(idElem){
     descripcion= document.getElementById("Gdescription").value;
     console.log(nombre + descripcion);
     if(nombre.length==0||descripcion.length==0){
-        alert("verifiqué que no hayan campos vacios");
+        alert("Llene los campos Nombre y Descripción");
     }else{ 
     let myData={
         idGama:idElem,//aqui le tiramos el id del back -->idGama
@@ -91,9 +86,10 @@ function actualizarGamas(idElem){
             $("#resultado1").empty();
             $("#id").val("");
             $("#Gname").val("");
-            $("#Gdescription").val("");
-            consultarGamas();
+            $("#Gdescription").val("");            
             alert("Ha actualizado la gama del vehiculo")
+            gamaf.reset();
+            consultarGamas();
         }
     });
     }
@@ -174,6 +170,7 @@ function guardarCarros(){
             console.log(response);
             console.log("Se ha registrado un nuevo carro");
             alert("Se ha registrado un nuevo carro");
+            carf.reset(); 
             window.location.reload()    
         },
         
@@ -191,7 +188,7 @@ function actualizarCarros(idElc){
     descripcion= document.getElementById("Cdescription").value;
     console.log(nombre + marca + anual + descripcion);
     if(nombre.length==0||marca.length==0||anual.length==0||descripcion.length==0){
-        alert("No sé aceptan campos vacios");
+        alert("Debe diligenciar los campos: Nombre, Marca, Año y Descripción");
     }else{
     let myData={
         idCar:idElc,//aqui le tiramos el id del back -->idCar
@@ -214,9 +211,10 @@ function actualizarCarros(idElc){
                 $("#Cname").val("");
                 $("#Cbrand").val("");
                 $("#year").val("");
-                $("#Cdescription").val("");
-                consultarCarros();
-                alert("Ha actualizado la gama del vehiculo");
+                $("#Cdescription").val("");                
+                alert("Ha actualizado el vehiculo");
+                carf.reset();
+                consultarCarros(); 
             }
         });
     }
@@ -298,6 +296,7 @@ function guardarClientes(){
             console.log(response);
             console.log("Se guardo correctamente");
             alert("Se registro un cliente correctamente");
+            clif.reset();
             window.location.reload()    
         },        
         error: function(jqXHR, textStatus, errorThrown) {
@@ -315,7 +314,7 @@ function actualizarClientes(idElCli){
     edad = document.getElementById("CLage").value;
     console.log(email + clave + nombre + edad);
     if(email.length==0||clave.length==0||nombre.length==0||edad.length==0){
-        alert("No sé aceptan campos vacios");
+        alert("Debe diligenciar los campos Correo, Clave, Nombre y Edad");
     }else{
     let myData={
         idClient:idElCli,//aqui le tiramos el id del back -->
@@ -341,6 +340,7 @@ function actualizarClientes(idElCli){
                 $("#CLage").val("");
                 consultarClientes();
                 alert("Ha actualizado el registro cliente");
+                clif.reset();
             }
         });
     }
@@ -392,7 +392,7 @@ function pintarRespuestaMensajes(respuesta){
 }
 
 function guardarMensajes(){
-    var texto = document.getElementById("Gname").value;
+    var texto = document.getElementById("Mmessagetext").value;
     console.log(texto);
     if(texto.length==0){
         alert("verifiqué que no hayan campos vacios");
@@ -410,21 +410,22 @@ function guardarMensajes(){
         success:function(response){
             console.log(response);
             console.log("Se guardo correctamente");
-            alert("Se guardo correctamente");
+            alert("Se ha enviado tú mensaje");
+            menf.reset();
             window.location.reload()    
         },        
         error: function(jqXHR, textStatus, errorThrown) {
             window.location.reload()
-            alert("No se guardo correctamente");    
+            alert("FAIL: No se guardo correctamente");    
         }
     });    
     }
 }
 function actualizarMensajes(idElMs){
-    var texto = document.getElementById("Gname").value;
+    var texto = document.getElementById("Mmessagetext").value;
     console.log(texto);
     if(texto.length==0){
-        alert("verifiqué que no hayan campos vacios");
+        alert("ERROR: campos de texto vacios");
     }else{
     let myData={
         idMessage:idElMs,//aqui le tiramos el id del back -->
@@ -442,8 +443,9 @@ function actualizarMensajes(idElMs){
             $("#resultado4").empty();
             $("#id").val("");
             $("#Mmessagetext").val("");
-            consultarMensajes();
             alert("Ha actualizado el mensaje")
+            menf.reset();
+            consultarMensajes();
         }
     });
     }
